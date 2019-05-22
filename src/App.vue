@@ -8,9 +8,19 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
   import FooterGuide from './components/FooterFuide/FooterFuide.vue'
+  import{reqFoodTypes} from './api'
 
   export default {
+    mounted(){
+      //this.$store.dispatch('getAddress')
+      this.getAddress()
+    },
+    methods:{
+      ...mapActions(['getAddress'])
+    },
+
     components:{
       FooterGuide
     }
